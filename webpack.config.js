@@ -67,7 +67,7 @@ module.exports = {
  // devtool: isDev ? 'source-map' : false,
   plugins: [
     new HtmlWebpackPlugin({
-       template: 'src/index.html',
+       template: './src/asset/pages/main/index.html',
        }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin() 
