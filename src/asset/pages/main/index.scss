@@ -118,22 +118,9 @@ $text-color-hover: #b1b1b1;
 .mouse-parallax__mars,
 .mouse-parallax__ship,
 .mouse-parallax__fix-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s ease-out;  
-    background-image: url('../../images/background.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-  
-}
 
+ 
+}
 
 .mouse-parallax__mars {
   background-image: url('../../images/mars_big.png');  
@@ -165,4 +152,45 @@ $text-color-hover: #b1b1b1;
   background-image:none;
   background: transparent;
   z-index: 4;
+}
+
+
+.parallax__fix-container{
+position: relative;
+z-index: 100;
+}
+.parallax{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+}
+.parallax__bg{
+  position: absolute;
+  background-image: url('../../images/sun_background.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 110%;
+  height: 110%;
+  transition: all 0.1s ease;  
+}
+
+
+.parallax__mars{
+  position: absolute;
+  background-image: url('../../images/mars_big.png');  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
 }

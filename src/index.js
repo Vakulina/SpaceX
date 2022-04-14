@@ -2,7 +2,7 @@ import './normalize.css'
 import './asset/fonts/fonts.css'
 import './asset/pages/main/index.scss'
 
-let bg = document.querySelector('.mouse-parallax__bg');
+let bg = document.querySelector('.parallax__bg');
 let line = document.querySelector('.mouse-parallax__line');
 let ship = document.querySelector('.mouse-parallax__ship');
 let isTransform = false;
@@ -18,9 +18,9 @@ const g = (h) => {
 }
 
 
-bg.style.transform = `translate( ${x * 15}px, ${y * 10}px)`;
+bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
+
 if(isTransform === false) {
- console.log('change')
  ship.style.transform = `scale(.7) rotateX(40deg)`;
  line.style.transform = `translateY(-30px)`;
  isTransform= true}
