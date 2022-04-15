@@ -7,10 +7,11 @@ let line = document.querySelector('.parallax__line');
 let ship = document.querySelector('.parallax__ship');
 let isTransform = false;
 
+
 const transform = (x,y)=>{
   bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
 
-  if(isTransform === false) {
+  if((isTransform === false)&&(window.innerHeight < 2000)) {
    ship.style.transform = `scale(.7) rotateX(40deg)`;
    line.style.transform = `translateY(-70px) skewY(-5deg)`;
    isTransform= true}
