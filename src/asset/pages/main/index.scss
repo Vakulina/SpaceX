@@ -309,6 +309,7 @@ $text-color-hover: #b1b1b1;
     box-sizing: border-box;
     padding: 25px 0;
     text-align: center;
+    cursor: pointer;
     transition: .3s;
     @include advantage-gradient($number:1, $firstVisibleSide:right, $secondVisibleSide:bottom, $firstHiddenSide:left, $secondHiddenSide:top);
     @include advantage-gradient($number:2, $firstVisibleSide:left, $secondVisibleSide:bottom, $firstHiddenSide:right, $secondHiddenSide:top);
