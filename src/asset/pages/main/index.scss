@@ -225,7 +225,7 @@ $text-color-hover: #b1b1b1;
     border-image-source: linear-gradient(189.0deg, #263e66 20%, #09213d 40%, #111f2d 61%, #23599c 79%);
     border-image-slice: 1;
     background-origin: border-box;
-    background-clip: content-box, border-box;
+    background-clip: padding-box;
     background: transparent;
     font-size: 0.875rem;
     line-height: 1.05rem;
@@ -233,6 +233,22 @@ $text-color-hover: #b1b1b1;
     color: #ffffff;
     cursor: pointer;
     background-color: rgba(22, 21, 29, .5);
+    position: relative;
 
+    &::after {
+      content: url('../../images/corner__left_bottom.png');
+      position: absolute;
+      bottom: -20px;
+      left: -15px;
+      z-index: 1;
+    }
+
+    &::before {
+      content: url('../../images/corner__right_top.png');
+      position: absolute;
+      top: -15px;
+      right: -16px;
+      z-index: 1;
+    }
   }
 }
