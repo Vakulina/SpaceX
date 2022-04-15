@@ -12,7 +12,8 @@ $text-color-hover: #b1b1b1;
   padding: 0 15px;
   box-sizing: border-box;
 }
-@mixin parallax-position{
+
+@mixin parallax-position {
   position: absolute;
   top: 0;
   right: 0;
@@ -24,15 +25,17 @@ $text-color-hover: #b1b1b1;
   width: 100%;
   height: 100%;
 }
+
 @mixin flex-center {
   height: 100%;
   display: flex;
   align-items: center;
 }
-@mixin text-gradient{
-  background:linear-gradient(-90.0deg, #ff3f04 0%, #ffffff 90%, #ffffff 100%);
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
+
+@mixin text-gradient {
+  background: linear-gradient(-90.0deg, #ff3f04 0%, #ffffff 90%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .page {
@@ -124,12 +127,13 @@ $text-color-hover: #b1b1b1;
 }
 
 
-.parallax__fix-container{
-position: relative;
-z-index: 100;
-height: 100%;
+.parallax__fix-container {
+  position: relative;
+  z-index: 100;
+  height: 100%;
 }
-.parallax{
+
+.parallax {
   position: fixed;
   top: 0;
   left: 0;
@@ -138,9 +142,10 @@ height: 100%;
   overflow: hidden;
   z-index: 10;
 }
-.parallax__bg{
-@include parallax-position;
-  transition: all 0.1s ease;  
+
+.parallax__bg {
+  @include parallax-position;
+  transition: all 0.1s ease;
   background-image: url('../../images/sun_background.jpg');
   width: 110%;
   height: 110%;
@@ -149,28 +154,30 @@ height: 100%;
 }
 
 
-.parallax__mars{
+.parallax__mars {
   @include parallax-position;
   z-index: 1;
-  background-image: url('../../images/mars_big.png'); 
+  background-image: url('../../images/mars_big.png');
   background-size: auto auto
 }
 
 .parallax__ship {
   @include parallax-position;
   z-index: 3;
-  background-image: url('../../images/ship.png') ;  
-  transition: all 11s ease-out;  
+  background-image: url('../../images/ship.png');
+  transition: all 11s ease-out;
   transform: scale(1.2);
 
 }
+
 .parallax__line {
   @include parallax-position;
   z-index: 4;
-  transition: all 11s ease-out;  
+  transition: all 11s ease-out;
   transform: scale(1.2);
-  background-image: url('../../images/line.png') ; 
+  background-image: url('../../images/line.png');
 }
+
 .parallax__title {
   @include parallax-position;
   z-index: 1;
@@ -181,29 +188,51 @@ height: 100%;
   color: #ffffff;
   display: flex;
   flex-direction: column;
+
   @media (max-width: 1200px) {
     left: 10px;
   }
 
 
-.title__main-word{
-  font-size: 3.6rem;
-  line-height: 3.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  @include text-gradient
+  .title__main-word {
+    font-size: 3.6rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include text-gradient
+  }
 
-}
-.title__subtitle{
-  font-size: 1.56rem;
-  font-weight: 300;
-  text-transform: lowercase;
-@include text-gradient
-}
+  .title__subtitle {
+    font-size: 1.56rem;
+    font-weight: 300;
+    text-transform: lowercase;
+    @include text-gradient
+  }
 }
 
-.content{
+.content {
+  @extend %wrapper;
+  height: calc(100% - 102px);
   display: flex;
   justify-content: space-between;
-}
+  align-items: center;
 
+  .button {
+    min-width: 180px;
+    height: 35px;
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(189.0deg, #263e66 20%, #09213d 40%, #111f2d 61%, #23599c 79%);
+    border-image-slice: 1;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background: transparent;
+    font-size: 0.875rem;
+    line-height: 1.05rem;
+    font-weight: 100;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: rgba(22, 21, 29, .5);
+
+  }
+}
