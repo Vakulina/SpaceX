@@ -38,6 +38,26 @@ $text-color-hover: #b1b1b1;
   -webkit-text-fill-color: transparent;
 }
 
+@mixin advantage-gradient($number, $firstVisibleSide, $secondVisibleSide, $firstHiddenSide, $secondHiddenSide) {
+  &:nth-of-type(#{$number}) {
+    background: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    border-#{$firstVisibleSide}: 1px solid transparent;
+    border-#{$secondVisibleSide}: 1px solid transparent;
+
+    &:hover {
+      background: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
+      border-style: solid;
+      border-width: 1px;
+      border-image-source: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
+      border-image-slice: 1;
+      background-origin: border-box;
+      background-clip: padding-box;
+      border-#{$secondHiddenSide}: none;
+      border-#{$firstHiddenSide}: none;
+    }
+  }
+}
+
 .page {
   font-family: $font-stack;
   font-size: $font-size;
@@ -75,11 +95,11 @@ $text-color-hover: #b1b1b1;
     height: 100px;
     flex-shrink: 1;
     flex-grow: 0;
-    border: 1px solid rgb(47, 51, 56);    
+    border: 1px solid rgb(47, 51, 56);
     border-top: none;
-    border-bottom: none;   
+    border-bottom: none;
 
-    .header__logo{
+    .header__logo {
       transition: .3s;
     }
 
@@ -289,82 +309,10 @@ $text-color-hover: #b1b1b1;
     box-sizing: border-box;
     padding: 25px 0;
     text-align: center;
-
     transition: .3s;
-
-    &:nth-of-type(1) {
-      background: linear-gradient(340deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-      border-right: 1px solid transparent;
-      border-bottom: 1px solid transparent;
-
-      &:hover {
-        background: linear-gradient(to top left, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
-        border-style: solid;
-        border-width: 1px;
-        border-image-source: linear-gradient(to top left, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
-        border-image-slice: 1;
-        background-origin: border-box;
-        background-clip: padding-box;
-        border-top: none;
-        border-left: none;
-      }
-    }
-    &:nth-of-type(2) {
-      background: linear-gradient(to top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-      border-left: 1px solid transparent;
-      border-bottom: 1px solid transparent;
-
-      &:hover {
-        background: linear-gradient(to top right, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
-        border-style: solid;
-        border-width: 1px;
-        border-image-source: linear-gradient(to top right, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
-        border-image-slice: 1;
-        background-origin: border-box;
-        background-clip: padding-box;
-        border-top: none;
-        border-right: none;
-      }
-    }
-
-    &:nth-of-type(3) {
-      background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-      border-top: 1px solid transparent;
-      border-right: 1px solid transparent;
-
-      &:hover {
-        background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
-        border-style: solid;
-        border-width: 1px;
-        border-image-source: linear-gradient(to bottom left, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
-        border-image-slice: 1;
-        background-origin: border-box;
-        background-clip: padding-box;
-        border-bottom: none;
-        border-left: none;
-      }
-    }
-
-    &:nth-of-type(4) {
-      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-      border-left: 1px solid transparent;
-      border-top: 1px solid transparent;
-
-      &:hover {
-        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
-        border-style: solid;
-        border-width: 1px;
-        border-image-source: linear-gradient(to bottom right, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
-        border-image-slice: 1;
-        background-origin: border-box;
-        background-clip: padding-box;
-        border-right: none;
-        border-bottom: none;
-      }
-    }
-
-
-
-
+    @include advantage-gradient($number:1, $firstVisibleSide:right, $secondVisibleSide:bottom, $firstHiddenSide:left, $secondHiddenSide:top);
+    @include advantage-gradient($number:2, $firstVisibleSide:left, $secondVisibleSide:bottom, $firstHiddenSide:right, $secondHiddenSide:top);
+    @include advantage-gradient($number:3, $firstVisibleSide:right, $secondVisibleSide:top, $firstHiddenSide:left, $secondHiddenSide:bottom);
+    @include advantage-gradient($number:4, $firstVisibleSide:left, $secondVisibleSide:top, $firstHiddenSide:right, $secondHiddenSide:bottom);
   }
 }
