@@ -12,7 +12,18 @@ $text-color-hover: #b1b1b1;
   padding: 0 15px;
   box-sizing: border-box;
 }
-
+@mixin parallax-position{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 110%;
+  height: 110%;
+}
 @mixin flex-center {
   height: 100%;
   display: flex;
@@ -106,48 +117,6 @@ $text-color-hover: #b1b1b1;
   }
 }
 
-.mouse-parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-}
-
-
-.mouse-parallax__mars {
-  background-image: url('../../images/mars_big.png');  
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-
-}
-.mouse-parallax__ship {
-  background-image: url('../../images/ship.png') ;  
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  transition: all 11s ease-out;  
-  transform: scale(1.2);
-
-}
-.mouse-parallax__line{
- background: url('../../images/line.png') no-repeat;
-  position: absolute;
-  top: calc(50% + 50px);
-  left: calc(50% - 405px);
-  height: 100%;
-  width: 100%;
-  z-index: 55;
-  transition: all 11s ease-out; 
-}
-.mouse-parallax__fix-container {
-  background-image:none;
-  background: transparent;
-  z-index: 4;
-}
-
 
 .parallax__fix-container{
 position: relative;
@@ -163,65 +132,30 @@ z-index: 100;
   z-index: 10;
 }
 .parallax__bg{
-  position: absolute;
-  background-image: url('../../images/sun_background.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 110%;
-  height: 110%;
+@include parallax-position;
   transition: all 0.1s ease;  
+  background-image: url('../../images/sun_background.jpg');
 }
 
 
 .parallax__mars{
-  position: absolute;
-  background-image: url('../../images/mars_big.png');  
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include parallax-position;
   z-index: 1;
+  background-image: url('../../images/mars_big.png'); 
 }
 
 .parallax__ship {
-  position: absolute;
-  background-image: url('../../images/ship.png') ;  
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include parallax-position;
   z-index: 3;
- 
+  background-image: url('../../images/ship.png') ;  
   transition: all 11s ease-out;  
   transform: scale(1.2);
 
 }
 .parallax__line {
-  position: absolute;
-  background-image: url('../../images/line.png') ;  
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include parallax-position;
   z-index: 4;
- 
   transition: all 11s ease-out;  
   transform: scale(1.2);
-
+  background-image: url('../../images/line.png') ; 
 }
