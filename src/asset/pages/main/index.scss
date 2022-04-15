@@ -58,6 +58,13 @@ $text-color-hover: #b1b1b1;
   }
 }
 
+@mixin header-coner {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+
+}
+
 .page {
   font-family: $font-stack;
   font-size: $font-size;
@@ -95,6 +102,45 @@ $text-color-hover: #b1b1b1;
     border: 1px solid rgb(47, 51, 56);
     border-top: none;
     border-bottom: none;
+    position: relative;
+
+    &::before {
+      content: ' ';
+      @include header-coner;
+      display: block;
+      border-left: 2px solid $text-color-light;
+      border-bottom: 2px solid $text-color-light;
+      bottom: -1px;
+      left: -1px;
+    }
+
+    &::after {
+      content: ' ';
+      @include header-coner;
+      display: block;
+      border-right: 2px solid $text-color-light;
+      border-bottom: 2px solid $text-color-light;
+      bottom: -1px;
+      right: -1px;
+    }
+
+
+
+    .header__corner_top-left {
+     @include header-coner;
+      top: -1px;
+      left: -1px;
+      border-left: 2px solid $text-color-light;
+      border-top: 2px solid $text-color-light;
+    }
+
+    .header__corner_top-right {
+      @include header-coner;
+      border-right: 2px solid $text-color-light;
+      border-top: 2px solid $text-color-light;
+      top: -1px;
+      right: -1px;
+    }
 
     .header__logo {
       width: 316px;
