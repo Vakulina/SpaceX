@@ -3,8 +3,9 @@ import './asset/fonts/fonts.css'
 import './asset/pages/main/index.scss'
 
 let bg = document.querySelector('.parallax__bg');
-let line = document.querySelector('.parallax__line');
-let ship = document.querySelector('.parallax__ship');
+let line = document.querySelector('.ship__broken-line');
+let ship = document.querySelector('.ship');
+const startButton= document.getElementById('start')
 const burgerButton = document.getElementById('close-burger');
 const nav = document.querySelector('.header__nav');
 const navList = document.querySelector('.header__list')
@@ -47,14 +48,22 @@ burgerButton.addEventListener('click', (e)=> toogleBurger(e));
 const transform = (x, y) => {
   bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
 
-  if ((isTransform === false) && (window.innerHeight < 2000) && (window.innerWidth > 800)) {
-    ship.style.transform = `scale(.7) rotateX(40deg)`;
-    line.style.transform = `translateY(-70px) skewY(-5deg)`;
-    isTransform = true;
-  }
+
 }
 
+const startSpace=(e)=>{
+e.preventDefault()
+if ((isTransform === false) && (window.innerHeight < 2000) && (window.innerWidth > 800)) {
 
+  ship.style.transform = `translateY(-25px) rotateX(40deg)`;
+  line.style.opacity = `0`;
+  
+  ship.classList.add('ship_whithout-line')
+  isTransform = true;
+}
+}
+
+startButton.addEventListener('click',(e)=>startSpace(e))
 const moveMouse = (e) => {
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;

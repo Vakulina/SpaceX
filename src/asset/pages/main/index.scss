@@ -425,6 +425,7 @@ padding-top: 100px;
   background-image: url('../../images/ship.png');
   background-position: bottom right;
   position: relative;
+  transition: 2s ease;
 &:after{
 content: ' ';
 position: absolute;
@@ -448,17 +449,26 @@ left: 8px;
   left: 0;
   }
 }
+  .ship_whithout-line:after{
+content: none;
+  }
+  .ship_whithout-line:before{
+    content: none;
+      }
+
 
 .ship__broken-line{
   background: transparent;
   width: 100%;
-  max-width: 305px;
+  max-width: 345px;
   height: 40px;
   margin-right: 20px;
   margin-bottom: 50px;
   border-left: 1px solid rgba(255, 255, 255, .6);
   border-bottom: 1px solid rgba(255, 255, 255, .6);
-  transform: skewX(45deg)
+  transform: skewX(45deg);
+  transition: opacity 0.3s ease;
+  flex-shrink: 2
 }
 
 
