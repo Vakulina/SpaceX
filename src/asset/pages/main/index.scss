@@ -418,13 +418,47 @@ padding-top: 100px;
 }
 
 
-.ship__container{
-  width: 420px;
-  height: 163px;
-
-  background-image: url('../../images/line_ship.png');
+.ship{
+  width: 25px;
+  min-width: 25px;
+  height: 100px;
+  background-image: url('../../images/ship.png');
   background-position: bottom right;
+  position: relative;
+&:after{
+content: ' ';
+position: absolute;
+width: 5px;
+height: 5px;
+background: transparent;
+border: 1px solid rgba(255, 255, 255, .7);
+border-radius: 50%;
+top: 47px;
+left: 8px;
+}
+&:before{
+  content: ' ';
+  position: absolute;
+  z-index: 1;
+  width: 8px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, .6);
+ 
+  top: 49px;
+  left: 0;
+  }
+}
 
+.ship__broken-line{
+  background: transparent;
+  width: 100%;
+  max-width: 305px;
+  height: 40px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  border-left: 1px solid rgba(255, 255, 255, .6);
+  border-bottom: 1px solid rgba(255, 255, 255, .6);
+  transform: skewX(45deg)
 }
 
 
