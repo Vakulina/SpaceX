@@ -28,8 +28,12 @@
           <div class="header__corner header__corner_top-left"></div>
           <span class="header__corner header__corner_top-right"></span>
         </a>
-        <nav class="header__nav header__nav_burger">
-          <ul class="header__list header__nav_burger">
+        <div class="header__button-container header__button-container_active">
+        <button class="header__burger-button header__burger-button_toClose"></button>
+      </div>
+        <nav class="header__nav">
+         
+          <ul class="header__list header__list_burger">
             <li><a class="header__link" href="#">Главная</a></li>
             <li><a class="header__link" href="#">Технология</a></li>
             <li><a class="header__link" href="#">График&nbspполетов</a></li>
@@ -37,7 +41,9 @@
             <li><a class="header__link" href="#">О&nbspкомпании</a></li>
             <li><a class="header__link" href="#">Контакты</a></li>
           </ul>
+          
         </nav>
+        <div class="header__overlay header__overlay_visible"></div>
       </div>
 
     </header>
