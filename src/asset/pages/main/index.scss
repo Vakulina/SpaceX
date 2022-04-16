@@ -45,18 +45,16 @@ $text-color-hover: #b1b1b1;
 
 @mixin advantage-gradient($number, $firstVisibleSide, $secondVisibleSide, $firstHiddenSide, $secondHiddenSide) {
   &:nth-of-type(#{$number}) {
+    bottom: none;
     background: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     border-#{$firstVisibleSide}: 1px solid transparent;
     border-#{$secondVisibleSide}: 1px solid transparent;
 
     &:hover {
       background: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
-      border-style: solid;
-      border-width: 1px;
       border-image-source: linear-gradient(to #{$secondHiddenSide} #{$firstHiddenSide}, rgba(121, 124, 130, 0.65), transparent, rgba(121, 124, 130, 0.65));
+      border-image-slice: 1;     
       border-image-slice: 1;
-      background-origin: border-box;
-      background-clip: padding-box;
       border-#{$secondHiddenSide}: none;
       border-#{$firstHiddenSide}: none;
     }
@@ -73,7 +71,11 @@ $text-color-hover: #b1b1b1;
   margin: 0;
   color: $text-color-light;
   line-height: 1;
+  max-width: 153px;
   transition: .2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  
   &:hover{
     opacity: .7;
   }
@@ -169,7 +171,7 @@ $text-color-hover: #b1b1b1;
     }
   }
 
-  .header__nav {
+  .header__nav__burger {
     width: 100%;
     @include flex-center;
     justify-content: flex-end;
@@ -194,6 +196,12 @@ $text-color-hover: #b1b1b1;
       &:hover {
         cursor: pointer;
       }
+    }
+
+    .header__nav_burger{
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 150px;
     }
 
     .header__link {
@@ -382,33 +390,42 @@ align-self: center;
 .advantages {
   display: flex;
   flex-wrap: wrap;
-  max-width: 354px;
-  gap: 10px;
+  max-width: 381px;
+  gap: 11px;
   margin: 0;
   padding: 0;
   list-style: none;
 
   .advantage {
     
-    width: 172px;
-    height: 172px;
+    width: 185px;
+    height: 185px;
     box-sizing: border-box;
-    padding: 37px 0;
+    padding: 27px 27px 37px 15px;
     text-align: center;
     cursor: pointer;
     transition: .3s ease;
+    display: flex;
+    flex-direction: column;
 
-    @include advantage-gradient($number:1, $firstVisibleSide:right,
-      $secondVisibleSide:bottom, $firstHiddenSide:left, $secondHiddenSide:top);
+    &:nth-of-type(1){
+     justify-content: flex-end;
+    }
+    &:nth-of-type(2){
+      justify-content: flex-end;
+    }
 
-    @include advantage-gradient($number:2, $firstVisibleSide:left,
-      $secondVisibleSide:bottom, $firstHiddenSide:right, $secondHiddenSide:top);
+    @include advantage-gradient($number:1, 
+    $firstVisibleSide:right,  $secondVisibleSide:bottom, $firstHiddenSide:left, $secondHiddenSide:top);
 
-    @include advantage-gradient($number:3, $firstVisibleSide:right,
-      $secondVisibleSide:top, $firstHiddenSide:left, $secondHiddenSide:bottom);
+    @include advantage-gradient($number:2, 
+    $firstVisibleSide:left, $secondVisibleSide:bottom, $firstHiddenSide:right, $secondHiddenSide:top);
 
-    @include advantage-gradient($number:4, $firstVisibleSide:left,
-      $secondVisibleSide:top, $firstHiddenSide:right, $secondHiddenSide:bottom);
+    @include advantage-gradient($number:3, 
+    $firstVisibleSide:right, $secondVisibleSide:top, $firstHiddenSide:left, $secondHiddenSide:bottom);
+
+    @include advantage-gradient($number:4, 
+    $firstVisibleSide:left,  $secondVisibleSide:top, $firstHiddenSide:right, $secondHiddenSide:bottom);
 
 
     .advantage__text_small {
@@ -420,8 +437,8 @@ align-self: center;
       @include advantage-text;
       font-size: 3.75rem;
       font-weight: 700;
-      margin-top: 27px;
-      margin-bottom: 11px;
+      margin-top: 16px;
+      margin-bottom: 1px;
     }
   }
 }
