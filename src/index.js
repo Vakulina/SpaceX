@@ -6,7 +6,9 @@ let bg = document.querySelector('.parallax__bg');
 let line = document.querySelector('.parallax__line');
 let ship = document.querySelector('.parallax__ship');
 const burgerButton = document.getElementById('close-burger');
-const navList = document.querySelector('.header__list');
+const nav = document.querySelector('.header__nav');
+const navList = document.querySelector('.header__list')
+const burgerOverlay = document.querySelector('.header__overlay')
 
 //const buttonBurger=document.getElementById('close-burger');
 let isTransform = false;
@@ -24,11 +26,25 @@ window.addEventListener('resize', resizeListener);
 function openBurger(e){
   e.preventDefault();
  isOpen=true;
-  burgerButton.classList.add('header__burger-button_toClose')
+  burgerButton.classList.add('header__burger-button_toClose');
+ nav.classList.add('header__nav_burger')
+ navList.classList.add('header__list_burger')
+  burgerOverlay.classList.add('header__overlay_visible')
 }
 function closeBurger(e){
  isOpen=false;
-  burgerButton.classList.remove('header__burger-button_toClose')
+ navList.classList.add('closing');
+ e.target.disabled=true;
+
+ setTimeout(()=>{
+  burgerButton.classList.remove('header__burger-button_toClose');
+  nav.classList.remove('header__nav_burger')
+  navList.classList.remove('header__list_burger')
+  burgerOverlay.classList.remove('header__overlay_visible')
+  navList.classList.remove('closing');
+  e.target.disabled=false;
+ }, 800);
+
 }
 
 function toogleBurger(e){

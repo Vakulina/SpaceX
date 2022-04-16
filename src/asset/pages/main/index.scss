@@ -13,6 +13,8 @@ $text-color-hover: #b1b1b1;
     transform: translateX(0%);
   }
 }
+
+
 %wrapper {
   width: 100%;
   margin: 0 auto;
@@ -79,20 +81,7 @@ $text-color-hover: #b1b1b1;
 
 
 
-@mixin burger-menu {
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 102;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: rgba(47, 51, 56, 0.8);
-  width: 100%;
-  max-width: 520px;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-name: pop-up;
-}
+
 
 @mixin advantage-text {
   margin: 0;
@@ -226,23 +215,24 @@ $text-color-hover: #b1b1b1;
   display: none
 }
 
-.header__button-container_active {
-  @include burger-menu;
-  height: 100px;
-  display: block;
-}
+
+
 
 
 
 .header__burger-button {
   display: none;
+  margin: 0;
   @media (max-width: 1100px) {
-display: block; 
+    display: block;
+position: fixed;
+top: 25px;
+right: 15px;
+z-index: 103;
 background-color: transparent;
 height: 45px;
 width: 45px;
 background-size: contain;
-margin: 15px 15px 0 auto;  
 background-image: url('../../images/toOpen.svg'); 
   }
 }
@@ -279,12 +269,23 @@ background-image: url('../../images/toOpen.svg');
 
 
 .header__list_burger {
-  @include burger-menu;
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-top: 160px;
+  z-index: 102;
+  flex-direction: column;
   align-items: flex-start;
-  top: 100px;
-  bottom: 0;
-  height: calc(100vh - 100px);
+  height: 100%;
   justify-content: start;
+  background-color: rgba(47, 51, 56, 0.8);
+  width: 100%;
+  max-width: 520px;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-name: pop-up;
+
 
   li {
     height: 60px;
@@ -305,7 +306,11 @@ background-image: url('../../images/toOpen.svg');
     background-color: #3d3d3d;
     z-index: 1;
   }}
+}
 
+.closing{
+transition: transform .8s ease;
+  transform: translateX(100%) ;
 }
 
 .header__overlay {
