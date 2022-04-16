@@ -10,19 +10,9 @@ const nav = document.querySelector('.header__nav');
 const navList = document.querySelector('.header__list')
 const burgerOverlay = document.querySelector('.header__overlay')
 
-//const buttonBurger=document.getElementById('close-burger');
 let isTransform = false;
 let isOpen=false;
-/*
-let timeoutId = null;
 
-const resizeListener = () => {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => setWindowWidth(getWindth()), 150);
-};
-
-window.addEventListener('resize', resizeListener);
-*/
 function openBurger(e){
   e.preventDefault();
  isOpen=true;
@@ -52,15 +42,12 @@ e.preventDefault();
 !isOpen? openBurger(e) : closeBurger(e);
 }
 
-burgerButton.addEventListener('click', (e)=> {
-
-
-  toogleBurger(e)});
+burgerButton.addEventListener('click', (e)=> toogleBurger(e));
 
 const transform = (x, y) => {
   bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
 
-  if ((isTransform === false) && (window.innerHeight < 2000) && (window.innerHeight > 800)) {
+  if ((isTransform === false) && (window.innerHeight < 2000) && (window.innerWidth > 800)) {
     ship.style.transform = `scale(.7) rotateX(40deg)`;
     line.style.transform = `translateY(-70px) skewY(-5deg)`;
     isTransform = true;
