@@ -4,7 +4,15 @@ $font-size: 16px;
 $text-color-light:#ffffff;
 $text-color-hover: #b1b1b1;
 
+@keyframes pop-up {
+  from {
+    transform: translateX(100%);
+  }
 
+  to {
+    transform: translateX(0%);
+  }
+}
 %wrapper {
   width: 100%;
   margin: 0 auto;
@@ -69,14 +77,7 @@ $text-color-hover: #b1b1b1;
   height: 7px;
 }
 
-@mixin burger-button {
-  display: block;
-  background-color: transparent;
-  height: 45px;
-  width: 45px;
-  background-size: contain;
-  margin: 15px 15px 0 auto;
-}
+
 
 @mixin burger-menu {
   position: fixed;
@@ -88,6 +89,9 @@ $text-color-hover: #b1b1b1;
   background-color: rgba(47, 51, 56, 0.8);
   width: 100%;
   max-width: 520px;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-name: pop-up;
 }
 
 @mixin advantage-text {
@@ -232,15 +236,24 @@ $text-color-hover: #b1b1b1;
 
 .header__burger-button {
   display: none;
+  @media (max-width: 1100px) {
+display: block; 
+background-color: transparent;
+height: 45px;
+width: 45px;
+background-size: contain;
+margin: 15px 15px 0 auto;  
+background-image: url('../../images/toOpen.svg'); 
+  }
 }
 
-.header__burger-button_toOpen {
-  @include burger-button;
+/*.header__burger-button_toOpen {
+  
   background-image: url('../../images/toOpen.svg');
-}
+}*/
 
 .header__burger-button_toClose {
-  @include burger-button;
+ 
   background-image: url('../../images/toClose.svg');
 }
 .header__list {
@@ -310,9 +323,14 @@ $text-color-hover: #b1b1b1;
   background: #000000;
   opacity: 0.8;
 }
-  
+  .header__nav{
+    @media (max-width:1100px) {
+display: none;      
+    }
+  }
 
 .header__nav_burger {
+  display: block;
   flex-direction: column;
   justify-content: start;
   padding-top: 150px;
