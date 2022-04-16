@@ -417,29 +417,16 @@ padding-top: 100px;
 
 }
 
-.parallax__ship {
-  @include parallax-position;
-  z-index: 3;
-  background-image: url('../../images/ship.png');
-  transition: all 11s ease-out;
-  transform: scale(1.2);
-  background-size: auto auto;
 
+.ship__container{
+  width: 420px;
+  height: 163px;
+
+  background-image: url('../../images/line_ship.png');
+  background-position: bottom right;
 
 }
 
-.parallax__line {
-  @include parallax-position;
-  z-index: 4;
-  transition: all 11s ease-out;
-  transform: scale(1.2);
-  background-image: url('../../images/line.png');
-
-  @media (min-width: 2000px) and (min-height: 2000px) {
-    left: 10px;
-    display: none;
-  }
-}
 
 .parallax__title {
   @include parallax-position;
@@ -466,8 +453,8 @@ padding-top: 100px;
   height: calc(100% - 102px);
   min-height: 434px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: flex-end;
   @media (max-width: 800px) {
     flex-direction: column-reverse;   
 align-items: center;
@@ -490,7 +477,7 @@ height: auto;
   @include text-gradient
 }
 .button {
-  align-self: center;
+ margin-bottom: 90px;
   min-width: 180px;
   height: 35px;
   border-style: solid;
@@ -533,11 +520,12 @@ height: auto;
 }
 
 .advantages {
+
   display: flex;
   flex-wrap: wrap;
   max-width: 381px;
   gap: 11px;
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
 
