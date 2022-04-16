@@ -104,10 +104,16 @@ $text-color-hover: #b1b1b1;
   width: 100%;
   height: 100vh;
   max-height: 2000px;
-  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
   margin: 0;
+  @media (max-width:800px){
+    background: url('../../images/background_static.jpg') no-repeat center center;
+    background-attachment: fixed;
+  }
+  @media screen and (orientation:portrait){
+    background: url('../../images/background_static_portret.jpg') no-repeat center center;
+  }
 }
 
 .header {
@@ -116,12 +122,24 @@ $text-color-hover: #b1b1b1;
   background-color: rgba(21, 10, 1, .21);
   border-bottom: 1px solid rgb(47, 51, 56);
   border-top: 1px solid rgb(47, 51, 56);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @media (max-width:800px){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .header__wrapper {
   @extend %wrapper;
   @include flex-center;
   justify-content: space-between;
+
+
 }
 
 .header__link_logo {
@@ -347,6 +365,17 @@ display: none;
   width: 100%;
   height: 100%;
   max-height: 1200px;
+  @media (max-width: 800px){
+padding-top: 100px;
+  }
+}
+.content__title{
+  display: none;
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .parallax {
@@ -354,11 +383,13 @@ display: none;
   top: 0;
   left: 0;
   width: 100%;
-
   height: 100%;
   max-height: 2000px;
   overflow: hidden;
   z-index: 10;
+  @media (max-width:800px){
+    display: none;
+  }
 
 }
 
@@ -426,32 +457,38 @@ display: none;
   }
 
 
-  .title__main-word {
-    font-size: 3.6rem;
-    line-height: 3.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    @include text-gradient
-  }
 
-  .title__subtitle {
-    font-size: 1.56rem;
-    font-weight: 300;
-    text-transform: lowercase;
-    @include text-gradient
-  }
 }
 
 .mars-travel {
   @extend %wrapper;
-  padding-top: 63px;
+  padding-top: 163px;
   height: calc(100% - 102px);
   min-height: 434px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;   
+align-items: center;
+height: auto;
+
+  }
+}
+.title__main-word {
+  font-size: 3.6rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include text-gradient
 }
 
+.title__subtitle {
+  font-size: 1.56rem;
+  font-weight: 300;
+  text-transform: lowercase;
+  @include text-gradient
+}
 .button {
   align-self: center;
   min-width: 180px;
