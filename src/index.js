@@ -14,6 +14,7 @@ const burgerOverlay = document.querySelector('.header__overlay')
 let isTransform = false;
 let isOpen = false;
 
+
 function openBurger(e) {
   e.preventDefault();
   isOpen = true;
