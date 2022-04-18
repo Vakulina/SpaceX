@@ -537,8 +537,8 @@ $text-color-hover: #b1b1b1;
 .mars-travel {
   @extend %wrapper;
   padding-top: 0.55%;
-  height: calc(100% - 102px);
-  min-height: 60vh;
+  height: calc(100vh - 160px);
+  min-height: 460px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -549,12 +549,13 @@ $text-color-hover: #b1b1b1;
  
     flex-direction: column-reverse;
     align-items: center;
-    height: auto;
+    height: calc(100% - 120px);
   }
 
   @media (max-width: 420px) {
     padding: 0;
     padding-top: 0;
+    height: calc(100% - 100px);
   }
 }
 
