@@ -378,26 +378,16 @@ $text-color-hover: #b1b1b1;
   max-height: 1200px;
 
   @media (max-width: 800px) {
-
     max-height: none;
+  padding-top: 20px;
   }
 
   @media (max-width: 420px) {
-    padding: 0;
+    padding-top: 40px;
   }
 }
 
-.content__title {
-  display: none;
 
-  @media (max-width: 800px) {
-    margin: 0;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 .parallax {
   position: fixed;
@@ -409,9 +399,7 @@ $text-color-hover: #b1b1b1;
   overflow: hidden;
   z-index: 10;
 
-  @media (max-width:800px) {
-    display: none;
-  }
+
 }
 
 .parallax__bg {
@@ -426,6 +414,9 @@ $text-color-hover: #b1b1b1;
   @media (min-height: 2000px) {
     height: 2000px;
   }
+  @media (max-width:800px) {
+    display: none;
+  }
 }
 
 .parallax__mars {
@@ -433,6 +424,12 @@ $text-color-hover: #b1b1b1;
   z-index: 1;
   background-image: url('../../images/mars_big.png');
   background-size: auto auto;
+  @media (max-width:800px) {
+    display: none;
+  }
+  @media (max-width:800px) {
+    display: none;
+  }
 }
 
 .ship {
@@ -515,6 +512,17 @@ $text-color-hover: #b1b1b1;
   @media (max-width: 1200px) {
     left: 10px;
   }
+  @media (max-width:800px) {
+  top:120px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  text-align: center; 
+  }
+  @media (max-width:700px) {
+    top:60px;
+  }
 }
 
 .mars-travel {
@@ -528,6 +536,7 @@ $text-color-hover: #b1b1b1;
   box-sizing: border-box;
 
   @media (max-width: 800px) {
+    padding-top: 120px;
     flex-direction: column-reverse;
     align-items: center;
     height: auto;
