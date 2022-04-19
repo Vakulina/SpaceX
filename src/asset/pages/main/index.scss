@@ -106,17 +106,21 @@ $text-color-hover: #b1b1b1;
   padding-top: 100px;
   box-sizing: border-box;
 
-  @media (max-width: 800px), all and (orientation:landscape) {
+  @media (max-width: 800px),
+  all and (orientation:landscape) {
     background: url('../../images/background_static.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     padding-top: 200px;
   }
-.mini-page{
-  height: 150px;
-  background: transparent;
-}
-  @media (max-width: 700px), (max-height: 490px) {
+
+  .mini-page {
+    height: 150px;
+    background: transparent;
+  }
+
+  @media (max-width: 700px),
+  (max-height: 490px) {
     padding-top: 160px;
   }
 
@@ -157,7 +161,8 @@ $text-color-hover: #b1b1b1;
   border-bottom: none;
   position: relative;
 
-  @media (max-width:700px), (max-height: 490px) {
+  @media (max-width:700px),
+  (max-height: 490px) {
     height: 60px;
   }
 
@@ -265,7 +270,8 @@ $text-color-hover: #b1b1b1;
     background-image: url('../../images/toOpen.svg');
   }
 
-  @media (max-width: 700px), (max-height: 490px) {
+  @media (max-width: 700px),
+  (max-height: 490px) {
     top: 10px;
     right: 15px;
   }
@@ -401,8 +407,10 @@ $text-color-hover: #b1b1b1;
   max-height: 2000px;
   overflow: hidden;
   z-index: 10;
-  @media (max-width:700px), (max-height: 490px){
- position: static;
+
+  @media (max-width:700px),
+  (max-height: 490px) {
+    position: static;
   }
 
 }
@@ -419,7 +427,9 @@ $text-color-hover: #b1b1b1;
   @media (min-height: 2000px) {
     height: 2000px;
   }
-  @media (max-width:800px), all and (orientation:landscape) {
+
+  @media (max-width:800px),
+  all and (orientation:landscape) {
     display: none;
   }
 }
@@ -429,7 +439,9 @@ $text-color-hover: #b1b1b1;
   z-index: 1;
   background-image: url('../../images/mars_big.png');
   background-size: auto auto;
-  @media (max-width:800px), all and (orientation:landscape) {
+
+  @media (max-width:800px),
+  all and (orientation:landscape) {
     display: none;
   }
 }
@@ -514,36 +526,41 @@ $text-color-hover: #b1b1b1;
   @media (max-width: 1200px) {
     left: 10px;
   }
+
   @media (max-width:800px) {
-  top:120px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  max-width: none;
-  text-align: center; 
+    top: 120px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    text-align: center;
   }
-  @media (max-width:700px), (max-height: 490px) {
-  
-    top:60px;
+
+  @media (max-width:700px),
+  (max-height: 490px) {
+
+    top: 60px;
   }
 }
 
 .mars-travel {
   @extend %wrapper;
   padding-top: 0.55%;
-  min-height: calc(100vh - 160px);
   height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   box-sizing: border-box;
 
+  @media (min-width: 800px) and (min-height: 800px) {
+    min-height: 550px;
+  }
 
   @media (max-width: 800px) {
- 
+
     flex-direction: column-reverse;
     align-items: center;
-  
+
   }
 
   @media (max-width: 420px) {
