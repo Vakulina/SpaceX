@@ -42,10 +42,12 @@ function toogleBurger(e) {
   e.preventDefault();
   !isOpen ? openBurger(e) : closeBurger(e);
 }
-/*
+
 burgerButton.addEventListener('click', (e) => toogleBurger(e));
 
-
+const transform = (x, y) => {
+  bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
+}
 
 const startSpace = (e) => {
   e.preventDefault()
@@ -58,11 +60,6 @@ const startSpace = (e) => {
 }
 
 startButton.addEventListener('click', (e) => startSpace(e))
-*/
-const transform = (x, y) => {
-  bg.style.transform = `translate( -${x * 15}px, -${y * 10}px)`;
-}
-
 const moveMouse = (e) => {
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
