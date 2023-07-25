@@ -5,3 +5,4 @@
 - обработка браузерных событий javascript
 - parallax и анимация
 #### :link: Деплой https://vakulina.github.io/space-x/
+##### Проект выполнен в 2022 году
